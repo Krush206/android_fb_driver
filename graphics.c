@@ -265,6 +265,7 @@ unsigned int gr_get_height(GRSurface* surface) {
     return surface->height;
 }
 
+#if 0
 static void gr_init_font(void)
 {
     gr_font = calloc(sizeof(*gr_font), 1);
@@ -300,6 +301,7 @@ static void gr_init_font(void)
         gr_font->cheight = font.cheight;
     }
 }
+#endif
 
 #if 0
 // Exercises many of the gr_*() functions; useful for testing.
@@ -356,8 +358,6 @@ void gr_flip() {
 
 int gr_init(void)
 {
-    gr_init_font();
-
     gr_vt_fd = open("/dev/tty0", O_RDWR | O_SYNC);
     if (gr_vt_fd < 0) {
         // This is non-fatal; post-Cupcake kernels don't have tty0.

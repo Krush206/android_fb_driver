@@ -1,6 +1,5 @@
 SRC := graphics.c \
-    graphics_fbdev.c \
-    resources.c
+       graphics_fbdev.c
 OBJ := $(SRC:.c=.o)
 
 all: $(OBJ)
